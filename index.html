@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>萌萌山海经大冒险</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="gameArea">
+        <div class="snow-ground"></div>
+        <div id="game-stats">
+            <div id="timer">60</div>
+            <div id="monster-count">0/30</div>
+        </div>
+        <div id="volume-control">
+            <label for="volume">🔊</label>
+            <input type="range" id="volume" min="0" max="100" value="0">
+        </div>
+        <audio id="bgMusic" loop>
+            <source src="sound/background.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="clickSound">
+            <source src="sound/chick.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="loseSound">
+            <source src="sound/win.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="gameoverSound">
+            <source src="sound/gameover.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="qilinSound">
+            <source src="sound/qilin.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="fenghuangSound">
+            <source src="sound/fenghuang.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="baihuSound">
+            <source src="sound/baihu.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="xuanwuSound">
+            <source src="sound/xuanwu.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="jiuweihuSound">
+            <source src="sound/jiuweihu.mp3" type="audio/mpeg">
+        </audio>
+        <button id="restartButton">重新开始</button>
+        <button id="surrenderButton">认输了</button>
+        <div id="gameObject"></div>
+        <div id="gameOver" class="game-result">
+            <div class="game-over-text">GAME OVER</div>
+            <div class="result-character"></div>
+            <button class="play-again-btn">再来一局</button>
+        </div>
+        <div id="gameWin" class="game-result">
+            <div class="game-over-text win-text">WIN</div>
+            <div class="result-character"></div>
+            <button class="play-again-btn">再来一局</button>
+        </div>
+        <div id="pauseMessage">游戏暂停</div>
+    </div>
+
+    <div class="characters">
+        <h1 class="game-title">萌萌山海经大冒险</h1>
+        
+        <div class="character-list">
+        <div class="character" id="qilin">
+            <img src="images/qilin.png" alt="麒麟">
+            <h3>麒麟</h3>
+            <p>身具鹿身龙头，温和祥瑞之兽。能带来福气与祥和。</p>
+        </div>
+
+        <div class="character" id="fenghuang">
+            <img src="images/fenghuang.png" alt="凤凰">
+            <h3>凤凰</h3>
+            <p>百鸟之王，具有五德：文、武、仁、义、礼。掌管南方。</p>
+        </div>
+         
+        <div class="character" id="baihu">
+            <img src="images/baihu.png" alt="白虎">
+            <h3>白虎</h3>
+            <p>西方神兽，主杀伐，威严神武，守护西方。</p>
+        </div>
+        
+        <div class="character" id="xuanwu">
+            <img src="images/xuanwu.png" alt="玄武">
+            <h3>玄武</h3>
+            <p>北方神兽，龟蛇合体，象征智慧与长寿。</p>
+        </div>
+        
+        <div class="character" id="jiuweihu">
+            <img src="images/jiuweihu.png" alt="九尾狐">
+            <h3>九尾狐</h3>
+            <p>通灵智慧之兽，千年修行，具有变化之能。</p>
+        </div>
+        
+        </div>
+        <div class="game-controls">
+            <div class="difficulty-select">
+                <h3>选择游戏难度</h3>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn active" data-enemies="50">简单</button>
+                    <button class="difficulty-btn" data-enemies="80">中等</button>
+                    <button class="difficulty-btn" data-enemies="150">困难</button>
+                </div>
+            </div>
+            <button id="startButton" class="start-button">开始游戏</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
